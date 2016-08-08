@@ -1,0 +1,22 @@
+{
+  "name": "pingpong",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "rilsta <rstarnes9@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "bootstrap": "^3.3.7",
+    "moment": "^2.14.1"
+  }
+}
