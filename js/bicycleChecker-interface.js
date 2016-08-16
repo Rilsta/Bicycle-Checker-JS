@@ -8,16 +8,20 @@ $(document).ready(function() {
     var bikeRadius = $('#bike-radius').val();
     var bikeColor = $('#bike-color').val();
     var bikeManu = $('#bike-manufacturer').val();
-
-
-
-    var dateBefore = new Date($('#date-before').val()).getTime() /1000;
-    console.log(dateBefore);
-
-
-
-    var dateAfter = new Date($('#date-after').val()).getTime() /1000;
-    console.log(dateAfter);
+    var dateBefore = $('#date-before').val()
+      if (dateBefore === "") {
+        dateBefore
+      }
+      else {
+        dateBefore = (new Date($('#date-before').val()).getTime() /1000);
+      }
+    var dateAfter = $('#date-after').val()
+      if (dateAfter === "") {
+        dateAfter
+      }
+      else {
+        dateAfter = (new Date($('#date-after').val()).getTime() /1000);
+      }
 
 
 
