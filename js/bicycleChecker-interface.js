@@ -6,6 +6,9 @@ $(document).ready(function() {
     $('#title').empty();
     var bikeZip = $('#bike-zip').val();
     var bikeRadius = $('#bike-radius').val();
+    if (bikeRadius === "") {
+      bikeRadius = "10";
+    }
     var bikeColor = $('#bike-color').val();
     var bikeManu = $('#bike-manufacturer').val();
     var dateBefore = $('#date-before').val()
@@ -23,13 +26,16 @@ $(document).ready(function() {
         dateAfter = (new Date($('#date-after').val()).getTime() /1000);
       }
 
-
+    if (bikeZip === "") {
+      alert("Please enter a zipcode.");
+    } else {
+    $('#title').append("Bikes stolen within " + bikeRadius + " miles of " + bikeZip);
+    currentBicycleObject.getBicycle(bikeZip, bikeRadius, bikeColor, bikeManu, dateBefore, dateAfter)
+    }
 
     $('#bike-zip').val("");
     $('#bike-radius').val("");
     $('#bike-color').val("");
     $('#bike-manufacturer').val("");
-    $('#title').append("Bikes stolen within " + bikeRadius + " miles of " + bikeZip);
-    currentBicycleObject.getBicycle(bikeZip, bikeRadius, bikeColor, bikeManu, dateBefore, dateAfter)
   });
 });
