@@ -8,8 +8,19 @@ $(document).ready(function() {
     var bikeRadius = $('#bike-radius').val();
     var bikeColor = $('#bike-color').val();
     var bikeManu = $('#bike-manufacturer').val();
-    var dateBefore = $('#date-before').val();
-    var dateAfter = $('#date-after').val();
+
+
+
+    var dateBefore = new Date($('#date-before').val()).getTime() /1000;
+    console.log(dateBefore);
+
+
+
+    var dateAfter = new Date($('#date-after').val()).getTime() /1000;
+    console.log(dateAfter);
+
+
+
     $('#bike-zip').val("");
     $('#bike-radius').val("");
     $('#bike-color').val("");

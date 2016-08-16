@@ -6,10 +6,6 @@ function BicycleChecker() {
 
 BicycleChecker.prototype.getBicycle = function(bikeZip, bikeRadius, bikeColor, bikeManu, dateBefore, dateAfter) {
 
-  var myDate = new Date("July 1, 1978 02:30:00");
-  var myEpoch = myDate.getTime()/1000.0;
-  document.write(myEpoch);
-
 
   /*Bike Count Get Request*/
   $.get('https://bikeindex.org:443/api/v2/bikes_search/count?page=1&proximity=' + bikeZip +
