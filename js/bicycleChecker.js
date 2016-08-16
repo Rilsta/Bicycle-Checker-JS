@@ -15,7 +15,7 @@ BicycleChecker.prototype.getBicycle = function(bikeZip, bikeRadius, bikeColor, b
         '&stolen_before=' + dateBefore +
         '&stolen_after=' + dateAfter).then(function(response) {
     $('#number-stolen').empty();
-    $('#number-stolen').append(response.proximity);
+    $('#number-stolen').append(response.proximity + " total stolen.");
   }).fail(function(error) {
     $('.results').text('didnt work');
   });
@@ -31,6 +31,10 @@ BicycleChecker.prototype.getBicycle = function(bikeZip, bikeRadius, bikeColor, b
     $('#bikes').empty();
     var trekBikes = [];
     var schwinnBikes = [];
+    var giantBikes = [];
+    var diamondbackBikes = [];
+    var konaBikes = [];
+    var specializedBikes = [];
     var otherBikes = [];
     response.bikes.forEach(function(bike) {
       // $('#bikes').append('<li>' + bike.manufacturer_name + ", " + bike.frame_colors + '</li>');
@@ -39,13 +43,25 @@ BicycleChecker.prototype.getBicycle = function(bikeZip, bikeRadius, bikeColor, b
         trekBikes.push(bike.manufacturer_name);
       } else if (bike.manufacturer_name === "Schwinn") {
         schwinnBikes.push(bike.manufacturer_name);
+      } else if (bike.manufacturer_name === "Giant") {
+        giantBikes.push(bike.manufacturer_name);
+      } else if (bike.manufacturer_name === "Diamondback") {
+        diamondbackBikes.push(bike.manufacturer_name);
+      } else if (bike.manufacturer_name === "Diamondback") {
+        konaBikes.push(bike.manufacturer_name);
+      } else if (bike.manufacturer_name === "Diamondback") {
+        specializedBikes.push(bike.manufacturer_name);
       } else {
         otherBikes.push(bike.manufacturer_name);
       }
     });
-    console.log(trekBikes.length);
-    console.log(schwinnBikes.length);
-    console.log(otherBikes.length);
+    $('#bikes').append('<li>' + trekBikes.length + " Treks" + '</li>');
+    $('#bikes').append('<li>' + schwinnBikes.length + " Schwinns" + '</li>');
+    $('#bikes').append('<li>' + giantBikes.length + " Giants");
+    $('#bikes').append('<li>' + diamondbackBikes.length + " Diamondbacks" + '</li>');
+    $('#bikes').append('<li>' + konaBikes.length + " Konas" + '</li>');
+    $('#bikes').append('<li>' + specializedBikes.length + " Specializeds" + '</li>');
+    $('#bikes').append('<li>' + otherBikes.length + " Others"  + '</li>');
     console.log(response.bikes);
 
 
