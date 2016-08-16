@@ -17,7 +17,7 @@ BicycleChecker.prototype.getBicycle = function(bikeZip, bikeRadius, bikeColor, b
     $('#number-stolen').empty();
     $('#number-stolen').append(response.proximity);
   }).fail(function(error) {
-    $('.results').text('didnt work')
+    $('.results').text('didnt work');
   });
 
   /*Bike Info Get Request*/
@@ -51,9 +51,9 @@ BicycleChecker.prototype.getBicycle = function(bikeZip, bikeRadius, bikeColor, b
 
 
   }).fail(function(error) {
-    $('.results').text('didnt work')
+    $('.results').text('didnt work');
   });
-}
+};
 
 
 exports.bicycleModule = BicycleChecker;
